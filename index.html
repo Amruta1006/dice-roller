@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+</head>
+<style>
+ .dice-container{
+    width:400px;
+    border: 2px solid rgb(1, 36, 49);
+    border-radius: 10px;
+    margin:30px auto ;
+    display: block;
+    background-color: rgb(107, 155, 161);
+ }
+ .dice-img{
+   width: 200px;
+   display: block;
+   margin:20px auto ;
+ }
+ .roll-btn{
+    display: block;
+    margin: 20px auto ;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+ }
+ .heading{
+    text-align: center;
+ }
+
+</style>
+
+<body>
+<div class="dice-container">
+    <h1 class="heading">Dice Roller</h1>
+    <img src="dice1.png" class="dice-img" id="diceImg"/>
+    <button type="button" class="roll-btn" onclick="rollDice()">Roll the dice</button>
+</div>
+
+<script>
+
+    //create function of rollDice
+    function rollDice(){
+        //we want dice to roll for that taking 1 and 6 number
+    const min=1;
+    const max=6;
+
+    const randomNumber=Math.round(Math.random()*(max-min))+min;
+    const diceImage = document.getElementById('diceImg');
+    
+    if(randomNumber==1){
+        diceImg.src ='dice1.png';
+    }
+    else if(randomNumber==2){
+        diceImg.src ='dice2.png';
+    }
+    else if(randomNumber==3){
+        diceImg.src ='dice3.png';
+    }
+    else if(randomNumber==4){
+        diceImg.src ='dice4.png';
+    }
+    else if(randomNumber==5){
+        diceImg.src ='dice5.png';
+    }
+    else if(randomNumber==6){
+        diceImg.src ='dice6.png';
+    }
+}   
+</script>
+
+</body>
+</html>
